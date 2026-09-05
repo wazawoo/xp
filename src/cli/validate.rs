@@ -19,8 +19,10 @@ pub async fn run(args: &ValidateArgs) -> Result<(), Box<dyn Error>> {
             Ok(())
         }
         Err(e) => {
+            // i'd rather return the error but i don't want it to print ugly
             error!("validate Err: {e}");
             std::process::exit(1);
+            // Err(Box::new(e))
         }
     }
 }
