@@ -3,10 +3,11 @@
 // TODO: extra fields allowed (ignored unless supported by spec, but you can use for your own purposes)
 // TODO: vscode extension to treat .xp as .json for syntax highlighting
 
+use schemars::JsonSchema;
 use serde::{Serialize};
 use eserde::{Deserialize};
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Xp {
     personal_info: PersonalInfo,
     skill_categories: Vec<SkillCategory>,
@@ -15,7 +16,7 @@ pub struct Xp {
     work: Vec<Work>
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct PersonalInfo {
     name: String,
     phone_number: Option<String>,
@@ -23,27 +24,27 @@ pub struct PersonalInfo {
     website: Option<String>
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct SkillCategory {
     category: String,
     include: bool,
     skills: Vec<String>
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Skill {
     name: String,
     years_of_experience: Option<u32>
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Link {
     // TODO: use poper path type?
     url: String,
     title: Option<String>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Work {
     position: Option<String>,
     company_name: Option<String>,
@@ -52,7 +53,7 @@ pub struct Work {
     bullets: Option<Vec<String>>
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Education {
     degree: Option<String>,
     majors: Vec<Major>,
@@ -63,13 +64,13 @@ pub struct Education {
     gpa: Option<String>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Major {
     name: String,
     gpa: Option<String>
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Minor {
     name: String,
     gpa: Option<String>

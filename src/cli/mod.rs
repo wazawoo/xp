@@ -1,6 +1,7 @@
 use clap::{Parser, Subcommand};
-use crate::cli::{validate::ValidateArgs};
+use crate::cli::{generate_schema::GenerateSchemaArgs, validate::ValidateArgs};
 
+pub mod generate_schema;
 pub mod validate;
 
 #[derive(Parser)]
@@ -12,5 +13,6 @@ pub struct Cli {
 
 #[derive(Subcommand)]
 pub enum Commands {
+    GenerateSchema(GenerateSchemaArgs),
     Validate(ValidateArgs),
 }

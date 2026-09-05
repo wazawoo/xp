@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Xp",
+  "type": "object",
+  "properties": {
+    "education": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Education"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Link"
+      }
+    },
+    "personal_info": {
+      "$ref": "#/$defs/PersonalInfo"
+    },
+    "skill_categories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SkillCategory"
+      }
+    },
+    "work": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Work"
+      }
+    }
+  },
+  "required": [
+    "personal_info",
+    "skill_categories",
+    "links",
+    "education",
+    "work"
+  ],
+  "$defs": {
+    "Education": {
+      "type": "object",
+      "properties": {
+        "degree": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int"
+        },
+        "gpa": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "institution_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "majors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Major"
+          }
+        },
+        "minors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Minor"
+          }
+        },
+        "start_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int"
+        }
+      },
+      "required": [
+        "majors",
+        "minors"
+      ]
+    },
+    "Link": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "url"
+      ]
+    },
+    "Major": {
+      "type": "object",
+      "properties": {
+        "gpa": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Minor": {
+      "type": "object",
+      "properties": {
+        "gpa": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "PersonalInfo": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "SkillCategory": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "include": {
+          "type": "boolean"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "category",
+        "include",
+        "skills"
+      ]
+    },
+    "Work": {
+      "type": "object",
+      "properties": {
+        "bullets": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "company_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "position": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

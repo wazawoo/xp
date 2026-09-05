@@ -16,6 +16,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     match &cli.command {
         Some(commands) => {
             match commands {
+                Commands::GenerateSchema(args) => xp::cli::generate_schema::run(args).await?,
                 Commands::Validate(args) => xp::cli::validate::run(args).await?,
             }
         },
