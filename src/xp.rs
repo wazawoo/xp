@@ -10,10 +10,10 @@ use eserde::{Deserialize};
 #[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Xp {
     personal_info: PersonalInfo,
-    skill_categories: Vec<SkillCategory>,
     links: Vec<Link>,
+    work: Vec<Work>,
     education: Vec<Education>,
-    work: Vec<Work>
+    skill_categories: Vec<SkillCategory>,
 }
 
 #[derive(Debug, Deserialize, Serialize, JsonSchema)]
@@ -21,7 +21,27 @@ pub struct PersonalInfo {
     name: String,
     phone_number: Option<String>,
     email: Option<String>,
-    website: Option<String>
+    website: Option<String>,
+    physical_location: Option<String>,
+    work_location_preference: Option<String>,
+}
+
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
+pub struct Link {
+    // TODO: use poper path type?
+    id: Option<String>,
+    url: String,
+    title: Option<String>,
+}
+
+#[derive(Debug, Deserialize, Serialize, JsonSchema)]
+pub struct Work {
+    id: Option<String>,
+    position: Option<String>,
+    company_name: Option<String>,
+    start_date: Option<String>,
+    end_date: Option<String>,
+    bullets: Option<Vec<String>>
 }
 
 #[derive(Debug, Deserialize, Serialize, JsonSchema)]
@@ -30,29 +50,6 @@ pub struct SkillCategory {
     include: bool,
     skills: Vec<String>
 }
-
-#[derive(Debug, Deserialize, Serialize, JsonSchema)]
-pub struct Skill {
-    name: String,
-    years_of_experience: Option<u32>
-}
-
-#[derive(Debug, Deserialize, Serialize, JsonSchema)]
-pub struct Link {
-    // TODO: use poper path type?
-    url: String,
-    title: Option<String>,
-}
-
-#[derive(Debug, Deserialize, Serialize, JsonSchema)]
-pub struct Work {
-    position: Option<String>,
-    company_name: Option<String>,
-    start_date: Option<String>,
-    end_date: Option<String>,
-    bullets: Option<Vec<String>>
-}
-
 #[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Education {
     degree: Option<String>,

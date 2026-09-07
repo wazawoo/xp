@@ -1,0 +1,64 @@
+{
+    "personal_info": {
+        "name": "Anonymous Human",
+        "phone_number": "012.345.6789",
+        "email": "example@example.com",
+        "website": "https://example.com",
+        "physical_location": "0° N, 0° W",
+        "work_location_preference": "Remote"
+    },
+    "links": [
+        {
+            "id": "github",
+            "url": "https://github.com/wazawoo",
+            "title": "GitHub"
+        }
+    ],
+    "work": [
+        {
+            "id": "everything-acme",
+            "position": "Everything",
+            "company_name": "ACME",
+            "end_date": "Present",
+            "start_date": "01/2000",
+            "bullets": [
+                "Added all features",
+                "Fixed all bugs"
+            ]
+        }
+    ],
+    "skill_categories": [
+        {
+            "include": false,
+            "category": "Human Languages",
+            "skills": [
+                "English"
+            ]
+        },
+        {
+            "include": true,
+            "category": "Languages",
+            "skills": [
+                "Rust",
+                "Swift",
+                "Typst"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "A.B.C.",
+            "majors": [
+                {
+                    "name": "Alphabet Engineering",
+                    "gpa": "4.0"
+                }
+            ],
+            "minors": [],
+            "institution_name": "#1 University",
+            "start_year": 1900,
+            "end_year": 2000,
+            "gpa": "4.0"
+        }
+    ]
+}
