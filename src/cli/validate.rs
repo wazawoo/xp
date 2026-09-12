@@ -11,7 +11,7 @@ pub struct ValidateArgs {
     xp_file_path: PathBuf,
 }
 
-pub async fn run(args: &ValidateArgs) -> Result<(), Box<dyn Error>> {
+pub fn run(args: &ValidateArgs) -> Result<(), Box<dyn Error>> {
     let file = std::fs::read_to_string(&args.xp_file_path)?;
     match eserde::json::from_str::<Xp>(&file) {
         Ok(xp) => {

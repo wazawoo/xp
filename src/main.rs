@@ -3,8 +3,7 @@ use clap::Parser;
 
 use xp::cli::{Cli, Commands};
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let mut log_builder = env_logger::Builder::new();
     log_builder
         .filter_level(log::LevelFilter::Warn)
@@ -16,8 +15,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
     match &cli.command {
         Some(commands) => {
             match commands {
-                Commands::GenerateSchema(args) => xp::cli::generate_schema::run(args).await?,
-                Commands::Validate(args) => xp::cli::validate::run(args).await?,
+                Commands::GenerateSchema(args) => xp::cli::generate_schema::run(args)?,
+                Commands::Validate(args) => xp::cli::validate::run(args)?,
             }
         },
         None => {

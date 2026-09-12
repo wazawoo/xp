@@ -12,7 +12,7 @@ pub struct GenerateSchemaArgs {
     schema_path: PathBuf,
 }
 
-pub async fn run(args: &GenerateSchemaArgs) -> Result<(), Box<dyn Error>> {
+pub fn run(args: &GenerateSchemaArgs) -> Result<(), Box<dyn Error>> {
     let schema = schema_for!(Xp);
     // todo: handle to_str error
     let schema_path = args.schema_path.to_str().unwrap();

@@ -5,7 +5,6 @@ edition = "2024"
 
 [dependencies]
 clap = { version = "4.5.55", features = ["derive"] }
-tokio = { version = "1", features = ["full"] }
 log = "0.4.34"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = { version = "1.0.151" }
