@@ -4,27 +4,32 @@
   "type": "object",
   "properties": {
     "education": {
+      "description": "Education started/completed by the person",
       "type": "array",
       "items": {
         "$ref": "#/$defs/Education"
       }
     },
     "links": {
+      "description": "Links related to the person",
       "type": "array",
       "items": {
         "$ref": "#/$defs/Link"
       }
     },
     "personal_info": {
+      "description": "Identifiable information for the person",
       "$ref": "#/$defs/PersonalInfo"
     },
     "skill_categories": {
+      "description": "Categories of skills possessed by the person",
       "type": "array",
       "items": {
         "$ref": "#/$defs/SkillCategory"
       }
     },
     "work": {
+      "description": "Work experience started/completed by the person",
       "type": "array",
       "items": {
         "$ref": "#/$defs/Work"
@@ -43,31 +48,35 @@
       "type": "object",
       "properties": {
         "degree": {
+          "description": "Name of started/completed degree",
           "type": [
             "string",
             "null"
           ]
         },
-        "end_year": {
+        "end_date": {
+          "description": "End date (format unspecified to allow \"Present\", for example)",
           "type": [
-            "integer",
+            "string",
             "null"
-          ],
-          "format": "int"
+          ]
         },
         "gpa": {
+          "description": "Grade point average (format unspecified to allow for GPA variants, adjustable decimal precision, etc.)",
           "type": [
             "string",
             "null"
           ]
         },
         "institution_name": {
+          "description": "Name of educational institution",
           "type": [
             "string",
             "null"
           ]
         },
         "majors": {
+          "description": "List of started/completed majors",
           "type": [
             "array",
             "null"
@@ -77,6 +86,7 @@
           }
         },
         "minors": {
+          "description": "List of started/completed minors",
           "type": [
             "array",
             "null"
@@ -85,12 +95,12 @@
             "$ref": "#/$defs/Minor"
           }
         },
-        "start_year": {
+        "start_date": {
+          "description": "Start date (format unspecified to allow \"2010\", \"May 1995\", etc.)",
           "type": [
-            "integer",
+            "string",
             "null"
-          ],
-          "format": "int"
+          ]
         }
       }
     },
@@ -98,18 +108,21 @@
       "type": "object",
       "properties": {
         "id": {
+          "description": "Identifier, potentially unique",
           "type": [
             "string",
             "null"
           ]
         },
         "title": {
+          "description": "Title for display or alt-text",
           "type": [
             "string",
             "null"
           ]
         },
         "url": {
+          "description": "Web url (format unspecified)",
           "type": "string"
         }
       },
@@ -155,33 +168,39 @@
       "type": "object",
       "properties": {
         "email": {
+          "description": "Email address (format unspecified)",
           "type": [
             "string",
             "null"
           ]
         },
         "name": {
+          "description": "Name (format unspecified)",
           "type": "string"
         },
         "phone_number": {
+          "description": "Phone number (format unspecified)",
           "type": [
             "string",
             "null"
           ]
         },
         "physical_location": {
+          "description": "Physical location, if applicable",
           "type": [
             "string",
             "null"
           ]
         },
         "website": {
+          "description": "Personal website url (format unspecified)",
           "type": [
             "string",
             "null"
           ]
         },
         "work_location_preference": {
+          "description": "Work location preference, if applicable",
           "type": [
             "string",
             "null"
@@ -196,12 +215,15 @@
       "type": "object",
       "properties": {
         "category": {
+          "description": "Title of skill category",
           "type": "string"
         },
         "include": {
+          "description": "Whether to include skill category (useful for modular resumes)",
           "type": "boolean"
         },
         "skills": {
+          "description": "List of skills in this category",
           "type": "array",
           "items": {
             "type": "string"
@@ -218,6 +240,7 @@
       "type": "object",
       "properties": {
         "bullets": {
+          "description": "Individual items describing nature of started/completed work",
           "type": [
             "array",
             "null"
@@ -227,30 +250,35 @@
           }
         },
         "company_name": {
+          "description": "Company name",
           "type": [
             "string",
             "null"
           ]
         },
         "end_date": {
+          "description": "End date (format unspecified to allow \"Present\", for example)",
           "type": [
             "string",
             "null"
           ]
         },
         "id": {
+          "description": "Identifier, potentially unique",
           "type": [
             "string",
             "null"
           ]
         },
         "position": {
+          "description": "Title of started/completed work position",
           "type": [
             "string",
             "null"
           ]
         },
         "start_date": {
+          "description": "Start date (format unspecified to allow \"2010\", \"May 1995\", etc.)",
           "type": [
             "string",
             "null"

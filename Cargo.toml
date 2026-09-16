@@ -8,6 +8,9 @@ license = "MIT OR Apache-2.0"
 keywords = ["cli", "json", "parser", "schema", "validation"]
 categories = ["command-line-utilities", "parser-implementations", "text-processing"]
 
+[package.metadata.release]
+pre-release-hook = ["cargo", "run", "generate-schema"]
+
 [lints.clippy]
 all = "warn"
 cargo = "warn"
