@@ -4,7 +4,10 @@ version = "0.1.0"
 edition = "2024"
 description = "A standard file format for resume / cv source data"
 repository = "https://github.com/wazawoo/xp"
-license = "Apache-2.0 OR MIT"
+license = "MIT OR Apache-2.0"
+keywords = ["cli", "json", "parser", "schema", "validation"]
+categories = ["command-line-utilities", "parser-implementations", "text-processing"]
+
 [lints.clippy]
 all = "warn"
 cargo = "warn"
