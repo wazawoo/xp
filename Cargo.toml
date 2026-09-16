@@ -10,7 +10,6 @@ categories = ["command-line-utilities", "parser-implementations", "text-processi
 
 [package.metadata.release]
 pre-release-hook = ["cargo", "run", "generate-schema"]
-pre-release-commit-message = "chore: Generate JSON Schema"
 
 [lints.clippy]
 all = "warn"
