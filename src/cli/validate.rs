@@ -26,3 +26,30 @@ pub fn run(args: &ValidateArgs) -> Result<(), Box<dyn Error>> {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::fs;
+    use assert_cmd::Command;
+
+    #[test]
+    fn examples_valid() -> Result<(), Box<dyn Error>> {
+        let proj_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let examples_dir = proj_dir.join("examples");
+        let example_paths = fs::read_dir(examples_dir)?;
+
+        for path_res in example_paths {
+            let example_path = path_res?.path();
+            println!("Validating example .xp file: {}", example_path.display());
+            let mut cmd = Command::cargo_bin("xp")?;
+            cmd
+                .arg("validate")
+                .arg("--xp-file-path")
+                .arg(example_path)
+                .assert()
+                .success();
+        }
+        Ok(())
+    }
+}
