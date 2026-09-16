@@ -28,7 +28,6 @@ pub struct PersonalInfo {
 
 #[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Link {
-    // TODO: use poper path type?
     id: Option<String>,
     url: String,
     title: Option<String>,
@@ -53,8 +52,8 @@ pub struct SkillCategory {
 #[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Education {
     degree: Option<String>,
-    majors: Vec<Major>,
-    minors: Vec<Minor>,
+    majors: Option<Vec<Major>>,
+    minors: Option<Vec<Minor>>,
     institution_name: Option<String>,
     start_year: Option<isize>,
     end_year: Option<isize>,

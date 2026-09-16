@@ -33,10 +33,10 @@
   },
   "required": [
     "personal_info",
-    "skill_categories",
     "links",
+    "work",
     "education",
-    "work"
+    "skill_categories"
   ],
   "$defs": {
     "Education": {
@@ -68,13 +68,19 @@
           ]
         },
         "majors": {
-          "type": "array",
+          "type": [
+            "array",
+            "null"
+          ],
           "items": {
             "$ref": "#/$defs/Major"
           }
         },
         "minors": {
-          "type": "array",
+          "type": [
+            "array",
+            "null"
+          ],
           "items": {
             "$ref": "#/$defs/Minor"
           }
@@ -86,15 +92,17 @@
           ],
           "format": "int"
         }
-      },
-      "required": [
-        "majors",
-        "minors"
-      ]
+      }
     },
     "Link": {
       "type": "object",
       "properties": {
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "title": {
           "type": [
             "string",
@@ -161,7 +169,19 @@
             "null"
           ]
         },
+        "physical_location": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "work_location_preference": {
           "type": [
             "string",
             "null"
@@ -213,6 +233,12 @@
           ]
         },
         "end_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
           "type": [
             "string",
             "null"
