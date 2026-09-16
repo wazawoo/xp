@@ -56,3 +56,15 @@ vim.filetype.add({
 4. At first, I am not focusing on migration, since I do not believe this to be any sort of runtime / load-bearing format. It is for storing your own information, and importing/exporting. It will have a clear version history here on GitHub. 
 # AI
 This format is for humans. Files in this format represent the experiences, education, and skills of real human beings. As a result, I believe a human should be in the loop for any interaction with this format. That being said, I know AI will be used to interact with this, and that's unavoidable. Because of this, consumers of this format must do their own KYC / IDV to ensure they are dealing with a real person. That should always be required for acceptance anyways, so I don't believe this to be a huge issue, but it needed mentioning. If you are using AI to create fake experience files, I am disappointed in you. If you are trying to use this format to represent capabilities or experiences of an AI agent, I am even more disappointed in you.
+# Releasing new versions
+0. install needed crates
+```sh
+cargo install cargo-license
+cargo install cargo-release
+```
+
+1. verify licences of deps
+`cargo license`
+2. check [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html) 
+2. dry run release process
+`cargo release`
