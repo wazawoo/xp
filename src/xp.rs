@@ -92,12 +92,16 @@ pub struct Education {
 
 #[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Major {
+    /// Name of started/completed major
     name: String,
+    /// Grade point average in major courses (format unspecified to allow for GPA variants, adjustable decimal precision, etc.)
     gpa: Option<String>
 }
 
 #[derive(Debug, Deserialize, Serialize, JsonSchema)]
 pub struct Minor {
+    /// Name of started/completed minor
     name: String,
+    /// Grade point average in minor courses (format unspecified to allow for GPA variants, adjustable decimal precision, etc.)
     gpa: Option<String>
 }
