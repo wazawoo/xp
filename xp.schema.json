@@ -134,12 +134,14 @@
       "type": "object",
       "properties": {
         "gpa": {
+          "description": "Grade point average in major courses (format unspecified to allow for GPA variants, adjustable decimal precision, etc.)",
           "type": [
             "string",
             "null"
           ]
         },
         "name": {
+          "description": "Name of started/completed major",
           "type": "string"
         }
       },
@@ -151,12 +153,14 @@
       "type": "object",
       "properties": {
         "gpa": {
+          "description": "Grade point average in minor courses (format unspecified to allow for GPA variants, adjustable decimal precision, etc.)",
           "type": [
             "string",
             "null"
           ]
         },
         "name": {
+          "description": "Name of started/completed minor",
           "type": "string"
         }
       },
